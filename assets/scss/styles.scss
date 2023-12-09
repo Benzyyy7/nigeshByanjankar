@@ -1,6 +1,15 @@
 /*===== GOOGLE FONTS =====*/
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
+/* Add this CSS to your existing stylesheet */
+.home__title {
+    animation: fadeInUp 1.5s ease-out;
+    opacity: 0;
+    font-family: Georgia, serif; /* Change 'Your Preferred Font' to the desired font */
+    color: #333; /* Change #333 to your preferred text color */
+  }
+  
+  
 /*===== VARIABLES CSS =====*/
 --header-height: 3rem;
     --font-semi: 600;
@@ -199,7 +208,7 @@ img{
         &-icon{
             width: max-content;
             margin-bottom: var(--mb-2);
-            font-size: 1.5rem;
+            font-size: 2 rem;
             color: var(--second-color);
 
             &:hover{
@@ -392,6 +401,7 @@ img{
         }
     }
 }
+
 
 @media screen and (min-width: 576px){
     .home{

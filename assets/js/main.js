@@ -42,12 +42,49 @@ function scrollActive() {
 window.addEventListener("scroll", scrollActive);
 
 /*===== SCROLL REVEAL ANIMATION =====*/
-const sr = ScrollReveal({
-  origin: "top",
-  distance: "60px",
-  duration: 2000,
-  delay: 200,
-  //     reset: true
+// const sr = ScrollReveal({
+//   origin: "top",
+//   distance: "60px",
+//   duration: 2000,
+//   delay: 200,
+//   //     reset: true
+// });
+const sr = ScrollReveal();
+
+sr.reveal(".home__title", {
+  origin: "bottom",
+  distance: "50px",
+  duration: 1500,
+  delay: 400,
+  reset: true,
+});
+
+/**
+ * loading
+ */
+document.addEventListener("DOMContentLoaded", function () {
+  // Your existing JavaScript code
+
+  // Show the loading spinner
+  function showLoadingSpinner() {
+    document.getElementById("loadingSpinner").style.display = "block";
+  }
+
+  // Hide the loading spinner
+  function hideLoadingSpinner() {
+    document.getElementById("loadingSpinner").style.display = "none";
+  }
+
+  // Example: Show loading spinner before making an AJAX request
+  showLoadingSpinner();
+
+  // Simulate an asynchronous task (e.g., AJAX request) with setTimeout
+  setTimeout(function () {
+    // Your existing code that runs after the task is complete
+
+    // Hide the loading spinner after the task is complete
+    hideLoadingSpinner();
+  }, 2000); // Adjust the time based on your task duration
 });
 
 sr.reveal(".home__data, .about__img, .skills__subtitle, .skills__text", {});
