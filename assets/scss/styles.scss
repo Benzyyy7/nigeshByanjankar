@@ -1,50 +1,65 @@
 /*===== GOOGLE FONTS =====*/
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
-/* Add this CSS to your existing stylesheet */
-.home__title {
-    animation: fadeInUp 1.5s ease-out;
-    opacity: 0;
-    font-family: Georgia, serif; /* Change 'Your Preferred Font' to the desired font */
-    color: #333; /* Change #333 to your preferred text color */
-  }
-  
-  
-/*===== VARIABLES CSS =====*/
---header-height: 3rem;
+
+/* Global CSS Variables */
+:root {
+    --header-height: 3rem;
     --font-semi: 600;
 
-    /*===== Colores =====*/
-    /*Purple 260 - Red 355 - Blue 224 - Pink 340*/
-    /* HSL color mode */
+    /* Colors */
     --hue-color: 224;
     --first-color: hsl(var(--hue-color), 89%, 60%);
     --second-color: hsl(var(--hue-color), 56%, 12%);
 
-    /*===== Fuente y tipografia =====*/
+    /* Font and Typography */
     --body-font: 'Poppins', sans-serif;
-
     --big-font-size: 2rem;
     --h2-font-size: 1.25rem;
     --normal-font-size: .938rem;
     --smaller-font-size: .75rem;
 
-    /*===== Margenes =====*/
+    /* Margins */
     --mb-2: 1rem;
     --mb-4: 2rem;
     --mb-5: 2.5rem;
     --mb-6: 3rem;
 
-    /*===== z index =====*/
+    /* z-index */
     --z-back: -10;
     --z-fixed: 100;
+}
 
-    @media screen and (min-width: 968px){
+/* Home Title Animation */
+.home__title {
+    animation: fadeInUp 1.5s ease-out;
+    opacity: 0;
+    font-family: Georgia, serif;
+    color: #333;
+}
+
+/* Define the keyframes for fadeInUp */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Query for Larger Screens */
+@media screen and (min-width: 968px) {
+    :root {
         --big-font-size: 3.5rem;
         --h2-font-size: 2rem;
         --normal-font-size: 1rem;
         --smaller-font-size: .875rem;
+    }
 }
+
 
 /*===== BASE =====*/
 *,::before,::after{
@@ -324,25 +339,99 @@ img{
         border-radius: .5rem;
     }
 }
-/* ===== WORK =====*/
-.work{
-    &__container{
-        row-gap: 2rem;
-    }
-    &__img{
-        box-shadow: 0px 4px 25px rgba(14, 36, 49, 0.15); 
-        border-radius: .5rem;
-        overflow: hidden;
-        
-        & img{
-            transition: 1s;
 
-            &:hover{
-                transform: scale(1.1);
-            }
-        }
+/*===== WORK EXPERIENCE SECTION =====*/
+.work-experience {
+    padding: 4rem 0;
+    background-color: #f5f5f5;
+  }
+  
+  .work-experience__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 0 1.5rem;
+  }
+  
+  .work-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    transition: all 0.3s ease;
+  }
+  
+  .work-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .work-item__title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+  
+  .work-item__company {
+    font-size: 1.1rem;
+    color: #777;
+    margin-bottom: 0.5rem;
+  }
+  
+  .work-item__duration {
+    font-size: 1rem;
+    color: #888;
+    margin-bottom: 1rem;
+  }
+  
+  .work-item__description {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+  }
+  
+  .work-item__description li {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 1rem;
+  }
+  
+  .work-item__description li strong {
+    color: #3498db;
+    font-weight: 600;
+  }
+  
+  /* Media Queries for responsiveness */
+  @media (max-width: 768px) {
+    .work-experience__container {
+      grid-template-columns: 1fr;
+      padding: 0 1rem;
     }
-}
+  
+    .work-item {
+      padding: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .work-item__title {
+      font-size: 1.6rem;
+    }
+  
+    .work-item__company {
+      font-size: 1rem;
+    }
+  
+    .work-item__duration {
+      font-size: 0.9rem;
+    }
+  
+    .work-item__description li {
+      font-size: 1rem;
+    }
+  }
+  
 
 /* ===== CONTACT =====*/
 .contact{
@@ -517,6 +606,7 @@ img{
         column-gap: 2rem;
     }
 }
+
 
 @media screen and (min-width: 992px){
     .bd-grid{
