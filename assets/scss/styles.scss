@@ -460,6 +460,11 @@ img{
     background-color: var(--second-color);
     color: #fff;
     text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
     font-weight: var(--font-semi);
     padding: 2rem 0;
 
@@ -585,7 +590,8 @@ img{
         }
     }
 
-    .about{
+    .
+    {
         &__container{
            padding-top: 2rem;
         }

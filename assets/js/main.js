@@ -54,9 +54,15 @@ const sr = ScrollReveal();
 sr.reveal(".home__title", {
   origin: "bottom",
   distance: "50px",
-  duration: 1500,
-  delay: 400,
+  duration: 2000,
+  delay: 500,
   reset: true,
+});
+const greetings = document.querySelectorAll(".greetings");
+
+// Loop through each greeting and apply staggered delays
+greetings.forEach((element, index) => {
+  element.style.animationDelay = `${index * 3}s`; // Adjust timing if needed
 });
 
 /**

@@ -10,7 +10,285 @@
 
     <!-- =====BOX ICONS===== -->
     <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet" />
+    
+    <style>
+      .home {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem; /* Adjust spacing between elements */
+      }
+      
+      .home__data, .home__social, .home img {
+        flex: 1; /* Makes each element take up an equal portion of the available space */
+      }
+      
+      .home img {
+        max-width: auto; /* Set max width for the image */
+        height: auto;
+         /* Optional: Make the image circular */
+      }
+      
+      body {
+        background-color: #f1efeb; /* Warm Beige */
+        color: #292121; /* Dark Charcoal */
+      }
+      
+      a {
+        color: #04286b; /* Dark Brown */
+      }
+      
+      button {
+        background-color: #ebd5bf; /* Muted Olive */
+        color: white;
+      }
+      
+      footer {
+        background-color: #F0E5D8; /* Warm Beige */
+        color: #2E2E2E; /* Dark Charcoal */
+      }
+      
+      .projects {
+        background-image: url(""); /* Replace with your image path */
+        background-size: cover; /* Makes the image cover the entire section */
+        background-position: center; /* Centers the image */
+        background-repeat: no-repeat; /* Prevents the image from repeating */
+        padding: 50px 0; /* Adds some padding around the section */
+        color: white; /* Ensures text is readable over the background */
+      }
+      
+      
+      .section-title {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+      }
+      
+      .projects__container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+      
+      .project-item {
+        background-color: #fff;
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      
+      .project-item__title {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+        color: #333;
+      }
+      
+      .project-item__description {
+        font-size: 1rem;
+        color: #666;
+        margin-bottom: 1rem;
+      }
+      
+      .project-item__features {
+        list-style-type: disc;
+        padding-left: 1.5rem;
+        color: #333;
+        margin-bottom: 1.5rem;
+      }
+      
+      .project-item__features li {
+        margin-bottom: 0.5rem;
+      }
+      
+      .button {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        background-color: #042342;
+        color: #fff;
+        text-align: center;
+        border-radius: 4px;
+        text-decoration: none;
+        transition: background-color 0.3s;
+      }
+      
+      .button:hover {
+        background-color: #005bb5;
+      }
+      
+      
+     /* Work Experience Container */
+.work-experience__container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
 
+/* Card Component */
+.card {
+  width: 48%; /* Adjust width to fit two cards side by side */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  padding: 15px;
+  transition: box-shadow 0.3s;
+}
+
+/* Hover effect for card */
+.card:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Header */
+.card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.card-header .avatar {
+  background-color: #333;
+  color: white;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+}
+
+.card-title {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.card-subtitle {
+  font-size: 0.9em;
+  color: #777;
+}
+
+/* Card Content */
+.card-content {
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+.card-actions {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+.card-actions button {
+  background: none;
+  border: 1px solid #ddd;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 1.1em;
+  border-radius: 5px;
+}
+
+.card-actions button:hover {
+  background-color: #f0f0f0;
+}
+
+.collapse-content {
+  display: none;
+}
+
+.card.expanded .collapse-content {
+  display: block;
+}
+
+.expand-button {
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+/* Responsive Design: Stack cards on small screens */
+@media (max-width: 768px) {
+  .card {
+    width: 100%; /* Stack cards on smaller screens */
+  }
+}
+.greetings {
+  opacity: 0;               /* Start as invisible */
+  position: absolute;       /* Positioning them on top of each other */
+  left: 50%; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  font-size: 5em;
+  animation: fadeInOut 3s ease forwards; /* Controls duration of each greeting */
+  color: burlywood;
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0; }  /* Start and end invisible */
+  20%, 80% { opacity: 1; }  /* Visible in the middle of the animation */
+}
+/*===== WORK EXPERIENCE SECTION =====*/
+
+
+.work-item {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.work-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.work-item__title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.work-item__company {
+  font-size: 1.1rem;
+  color: #777;
+  margin-bottom: 0.5rem;
+}
+
+.work-item__duration {
+  font-size: 1rem;
+  color: #888;
+  margin-bottom: 1rem;
+}
+
+.work-item__description {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+}
+
+.work-item__description li {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.work-item__description li strong {
+  color: #3498db;
+  font-weight: 600;
+}
+
+
+    </style>
     <title>Portfolio Website - Nigesh Byanjankar</title>
   </head>
   <body>
@@ -37,7 +315,7 @@
         </div>
       </nav>
     </header>
-
+    
     <main class="l-main">
       <!--===== HOME =====-->
       <section class="home bd-grid" id="home">
@@ -57,21 +335,22 @@
 
           <a href="https://github.com/Benzyyy7" target="_blank" class="home__social-icon"><i class="bx bxl-github"></i></a>
         </div>
-
-        <div class="home__img">
-          <svg class="home__blob" viewBox="0 0 479 467" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <mask id="mask0" mask-type="alpha">
-              <path
-                d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z"
-              />
-            </mask>
-            <g mask="url(#mask0)">
-              <image class="home__blob-img" x="0" y="0" width="479" height="467" href="assets/img/BENZY.png" />
-            </g>
-          </svg>
+        <div>
+          <img src="assets/img/nigesh.jpeg"/>
         </div>
-      </section>
 
+        
+      </section>
+      <h1 class="greetings">
+        WELCOME 
+      </h1>
+      <h1 class="greetings">
+        NAMASTE 
+      </h1>
+      <h1 class="greetings">
+        नमस्ते 
+      </h1>
+      
       <!--===== ABOUT =====-->
       <section class="about section" id="about">
         <h2 class="section-title">About</h2>
@@ -82,10 +361,7 @@
           <div>
             <h2 class="about__subtitle">I am Nigesh Byanjankar</h2>
             <p class="about__text">
-              A highly motivated IT professional pursuing a Bachelor's degree in Computer Science at the University of Louisiana at Monroe. In my role as an IT Support Technician at ULM Computing
-              Center, I've demonstrated leadership in managing service tickets and troubleshooting issues. As a Web Developer at Himnadi Tours and Travels, I contributed to building a dynamic website.
-              Proficient in Python, JavaScript, and various frameworks, I hold certifications such as AWS Certified Cloud Practitioner and have a solid foundation in web development. I am enthusiastic
-              about applying my skills and certifications to contribute effectively in the field of IT.
+              "Welcome to my professional portfolio! I'm a passionate and dedicated IT professional currently pursuing a Bachelor's degree in Computer Science at the University of Louisiana at Monroe. With hands-on experience as an IT Support Technician and as a Software Development Intern, I specialize in troubleshooting, optimizing web and software applications, and providing reliable technical support. My work spans from developing IoT solutions to building responsive and user-friendly websites and real-time chat applications. I hold certifications such as the AWS Certified Cloud Practitioner, showcasing my commitment to cloud integration and modern web technologies. Explore my projects to see the innovative solutions I've created to solve real-world challenges, including an AI-powered chat app and a pre-medical application system at ULM. Thank you for visiting!"
             </p>
           </div>
         </div>
@@ -99,11 +375,9 @@
           <div>
             <h2 class="skills__subtitle">Professional Skills</h2>
             <p class="skills__text">
-              I bring a robust set of professional skills to the table, honed through hands-on experience and academic endeavors. As an IT Support Technician at ULM Computing Center, I've demonstrated
-              adept team leadership, efficiently managing a high volume of service tickets and troubleshooting computer, network, and printer issues. My proficiency extends to web development, where I
-              played a pivotal role in creating a travel-focused website. Armed with a versatile skill set encompassing Python, JavaScript, Java, and various frameworks like React.js and Django, I am
-              well-equipped to tackle complex challenges in software engineering. Additionally, my certifications, including AWS Certified Cloud Practitioner, underscore my commitment to staying
-              current with industry standards and emerging technologies.
+              I am a skilled IT professional with expertise in programming languages such as Python, JavaScript, Java, C++, .NET, and C#. I have experience in front-end development using frameworks like React and Angular, and back-end technologies including Flask and Django. My technical proficiency extends to cloud platforms like AWS and Azure, as well as database management with PostgreSQL, MySQL, and MongoDB. Additionally, I am well-versed in version control tools such as Git and GitHub, containerization, and CI/CD practices, enabling me to develop, deploy, and manage applications efficiently.
+
+
             </p>
             <div class="skills__data">
               <div class="skills__names">
@@ -153,82 +427,98 @@
         </div>
       </section>
 
-      <!--===== WORK EXPERIENCE =====-->
-      <section class="work-experience section" id="work-experience">
-        <h2 class="section-title">Work Experience</h2>
+     <!--===== WORK EXPERIENCE =====-->
+<section class="work-experience section" id="work-experience">
+  <h2 class="section-title">Work Experience</h2>
 
-        <div class="work-experience__container bd-grid">
-          <!-- Software Development Intern -->
-          <div class="work-item">
-            <h3 class="work-item__title">Software Development Intern</h3>
-            <p class="work-item__company">Kumaripati, Nepal</p>
-            <p class="work-item__duration">June 2022 – August 2022 | 25 Hours</p>
-            <div>
-              <img src="assets/img/work4.jpg" alt="" class="skills__img" />
-            </div>
-            <ul class="work-item__description">
-              <li>
-                1. Collaborated with an <strong>Agile development team</strong> to design, develop, and optimize <strong>IoT platform solutions</strong> using <strong>C#/.NET</strong> and
-                <strong>JavaScript</strong>. Contributed to <strong>feature development</strong>, refined existing functionality, and implemented <strong>security enhancements</strong> to improve user
-                experience and system performance.
-              </li>
-              <li>
-                2. Assisted in the development of <strong>backend services</strong> and <strong>frontend features</strong>, ensuring applications met both <strong>functional</strong> and
-                <strong>technical specifications</strong>.
-              </li>
-              <li>
-                3. Participated in <strong>unit testing</strong>, <strong>integration testing</strong>, and <strong>regression testing</strong> using tools like <strong>Selenium</strong> and
-                <strong>Postman</strong> to ensure application <strong>reliability</strong>, <strong>security</strong>, and <strong>performance</strong>. Identified issues and worked closely with the
-                <strong>QA team</strong> to resolve them before release.
-              </li>
-              <li>
-                4. Engaged in <strong>documentation</strong> and <strong>reporting</strong>, ensuring test results and software modifications were well-documented and aligned with healthcare
-                compliance standards, contributing to a stable and secure production environment.
-              </li>
-              <li>
-                5. Actively participated in <strong>daily Agile standups</strong>, <strong>sprint planning</strong>, and <strong>team retrospectives</strong> via <strong>Microsoft Teams</strong> and
-                <strong>Slack</strong>, ensuring effective communication and alignment on project goals.
-              </li>
-            </ul>
-          </div>
-
-          <!-- IT Support Technician -->
-          <div class="work-item">
-            <h3 class="work-item__title">IT Support Technician</h3>
-            <p class="work-item__company">ULM Computing Center, Monroe, LA</p>
-            <p class="work-item__duration">August 2023 – Present</p>
-            <div>
-              <img src="assets/img/work5.jpg" alt="" class="skills__img" />
-            </div>
-            <ul class="work-item__description">
-              <li>
-                Provide <strong>technical support</strong> to <strong>faculty</strong> and <strong>students</strong>, troubleshooting issues related to <strong>software applications</strong>,
-                <strong>networking</strong>, and <strong>hardware</strong>, ensuring minimal downtime and uninterrupted workflow.
-              </li>
-              <li>
-                Collaborate with <strong>cross-functional teams</strong> to support IT needs, contributing to the overall system <strong>performance optimization</strong> and
-                <strong>reliability</strong> of campus-wide IT infrastructure.
-              </li>
-              <li>
-                Demonstrated <strong>problem-solving skills</strong> and <strong>strong customer service</strong>, handling complex technical issues in a timely manner, and resolving issues that
-                impact <strong>academic</strong> and <strong>administrative functions</strong>.
-              </li>
-              <li>Support <strong>data privacy initiatives</strong> and contribute to compliance efforts, applying best practices for IT security in handling sensitive information.</li>
-              <li>Continuously expand knowledge of new technologies and IT practices to improve support efficiency and effectiveness.</li>
-            </ul>
-          </div>
+  <div class="work-experience__container bd-grid">
+    
+    <!-- Software Development Intern -->
+    <div class="card work-item">
+      <div class="card-header">
+        <div class="avatar">SDI</div>
+        <div>
+          <div class="card-title">Software Development Intern</div>
+          <div class="card-subtitle">Kumaripati, Nepal</div>
         </div>
-      </section>
+      </div>
+      <img src="assets/img/Designer (1).png"/>
+
+      <div class="card-content">
+        <p><strong>Duration:</strong> June 2022 – August 2022 | 25 Hours</p><br>
+        <ul class="work-item__description">
+          <li>
+            Collaborated with an <strong>Agile development team</strong> to design, develop, and optimize <strong>IoT platform solutions</strong> using <strong>C#/.NET</strong> and
+            <strong>JavaScript</strong>. Contributed to <strong>feature development</strong>, refined existing functionality, and implemented <strong>security enhancements</strong> to improve user
+            experience and system performance.
+          </li>
+          <li>
+            Assisted in the development of <strong>backend services</strong> and <strong>frontend features</strong>, ensuring applications met both <strong>functional</strong> and
+            <strong>technical specifications</strong>.
+          </li>
+          <li>
+            Participated in <strong>unit testing</strong>, <strong>integration testing</strong>, and <strong>regression testing</strong> using tools like <strong>Selenium</strong> and
+            <strong>Postman</strong> to ensure application <strong>reliability</strong>, <strong>security</strong>, and <strong>performance</strong>. Identified issues and worked closely with the
+            <strong>QA team</strong> to resolve them before release.
+          </li>
+          <li>
+            Engaged in <strong>documentation</strong> and <strong>reporting</strong>, ensuring test results and software modifications were well-documented and aligned with healthcare
+            compliance standards, contributing to a stable and secure production environment.
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+
+    <!-- IT Support Technician -->
+    <div class="card work-item">
+      <div class="card-header">
+        <div class="avatar">IT</div>
+        <div>
+          <div class="card-title">IT Support Technician</div>
+          <div class="card-subtitle">ULM Computing Center, Monroe, LA</div>
+        </div>
+      </div>
+      <img src="assets/img/Designer (3).png"/>
+      <div class="card-content">
+        <p><strong>Duration:</strong> August 2023 – Present</p><br>
+        <ul class="work-item__description">
+          <li>
+            Provide <strong>technical support</strong> to <strong>faculty</strong> and <strong>students</strong>, troubleshooting issues related to <strong>software applications</strong>,
+            <strong>networking</strong>, and <strong>hardware</strong>, ensuring minimal downtime and uninterrupted workflow.
+          </li>
+          <li>
+            Collaborate with <strong>cross-functional teams</strong> to support IT needs, contributing to the overall system <strong>performance optimization</strong> and
+            <strong>reliability</strong> of campus-wide IT infrastructure.
+          </li>
+          <li>
+            Demonstrated <strong>problem-solving skills</strong> and <strong>strong customer service</strong>, handling complex technical issues in a timely manner, and resolving issues that
+            impact <strong>academic</strong> and <strong>administrative functions</strong>.
+          </li>
+          <li>
+            Support <strong>data privacy initiatives</strong> and contribute to compliance efforts, applying best practices for IT security in handling sensitive information.
+          </li>
+          <li>
+            Continuously expand knowledge of new technologies and IT practices to improve support efficiency and effectiveness.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
       <!--===== PROJECTS =====-->
 <section class="projects section" id="projects">
   <h2 class="section-title">Projects</h2>
+  
 
   <div class="projects__container bd-grid">
     <!-- Project 1: Portfolio Website -->
     <div class="project-item">
       <h3 class="project-item__title">Portfolio Website</h3>
-      <p class="project-item__description">
+      <p>
         Developed a personal portfolio website using HTML, CSS, and JavaScript. Integrated AWS services for hosting and performance optimization. Designed to showcase my projects and skills.
       </p>
       <!-- Unordered List of Features/Technologies -->
@@ -245,7 +535,7 @@
     <!-- Project 2: React Native Chat App -->
     <div class="project-item">
       <h3 class="project-item__title">React Native Chat App</h3>
-      <p class="project-item__description">
+      <p >
         Developed a real-time chat application with AI-driven responses using AWS Amplify Gen2, Bedrock, and API Gateway for backend scalability. Integrated monitoring with Amazon CloudWatch for improved user experience.
       </p>
       <!-- Unordered List of Features/Technologies -->
@@ -262,17 +552,17 @@
     <!-- Project 3: ULM PMAC -->
     <div class="project-item">
       <h3 class="project-item__title">ULM PMAC</h3>
-      <p class="project-item__description">
-        Led full-stack development and system integration for a web application aimed at pre-medical students. Utilized React.js for the frontend and Express.js for backend services. Ensured platform met key user requirements, privacy standards, and technical specifications throughout the development lifecycle.
+      <p>
+        Led full-stack development and system integration for a web application aimed at pre-medical students. 
       </p>
       <!-- Unordered List of Features/Technologies -->
       <ul class="project-item__features">
-        <li>Led full-stack development using React.js (frontend) and Express.js (backend)</li>
+        
         <li>Developed complex SQL queries in PostgreSQL to optimize data management and reporting accuracy</li>
         <li>Integrated AWS services (RDS for database, EC2 for hosting, S3 for file storage) to improve scalability and performance</li>
         <li>Automated deployment process using CI/CD with GitHub Actions and Docker, hosted on AWS EC2</li>
         <li>Collaborated with cross-functional teams in Agile sprints and contributed to testing and validation</li>
-        <li>Documented technical specifications and updates, ensuring on-time project delivery and quality standards</li>
+        
       </ul>
       <a href="https://github.com/Benzyyy7" class="button" target="_blank">View Project</a>
     </div>
@@ -280,6 +570,7 @@
 </section>
 
 </section>
+
 
       <!--===== CONTACT =====-->
 <section class="contact section" id="contact">
@@ -289,7 +580,7 @@
           <form action="https://formspree.io/f/mpzgvlnj" method="POST" class="contact__form" id="form">
             <input type="text" placeholder="Name" name="name" class="contact__input" />
             <input type="email" placeholder="Email" name="email" class="contact__input" />
-            <textarea name="message" id="" cols="0" rows="10" class="contact__input"></textarea>
+            <input name="message" placeholder="Feedback" id="" cols="0" rows="10" class="contact__input">
             <input type="submit" value="Submit" class="contact__button button" />
           </form>
         </div>
